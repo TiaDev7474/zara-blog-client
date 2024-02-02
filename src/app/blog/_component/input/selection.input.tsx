@@ -49,7 +49,7 @@ export default function SelectionInput<T extends SelectableItem>({
                         id="items"
                         type="search"
                         name="items"
-                        className="bg-transparent focus:outline-0 focus:border-none"
+                        className="bg-transparent border-none focus:outline-none focus:border-none "
                         value={searchQuery}
                         onChange={onSearchInputChange}
                     />

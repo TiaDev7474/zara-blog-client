@@ -153,7 +153,7 @@ export default function CreatePostForm() {
             </div>
 
             <Button
-                isLink={false} type="primary" label="Publish" onClick={handleSubmit}/>
+                isLink={false} type="primary" label="Save post" onClick={handleSubmit} actionType={"submit"}/>
         </form>
     )
 }

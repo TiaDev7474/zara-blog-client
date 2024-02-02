@@ -1,5 +1,6 @@
 import {IPost} from "@/app/blog/lib/types";
 import TagWrapperPost from "@/app/blog/_component/card/tag_wrapper.post";
+import Review from "@/app/blog/_component/review";
 
 
 export default function PostCard(post: IPost) {
@@ -7,19 +8,19 @@ export default function PostCard(post: IPost) {
     const {postId, title, content, updatedAt, createdAt, read_time, review_average, cover_photo, category, tag} = post
     console.log(category)
     return (
-        <div>
-            <span>{category[0].category.designation}</span>
+        <div className="dark:text-white flex flex-col gap-3">
+            <div className="text-secondary">
+                <span>{category[0].category.designation} </span>
+                <span className="text-grey text-sm ">{read_time} min read</span>
+            </div>
             <TagWrapperPost tags={tag} />
             <h2 className="text-2xl font-semibold">{title}</h2>
-            <p className="text-lg text-[#222]">{content}</p>
+            <p className=" text-grey">{content}</p>
             <div className="w-full flex justify-between">
-                <span>{read_time} min read</span>
                 <div>
-                    <span>Review: {review_average}</span>
+                   <Review />
                 </div>
             </div>
-
-
         </div>
     )
 }

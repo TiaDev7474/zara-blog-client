@@ -8,6 +8,7 @@ export type ButtonPropsType = {
     type: "primary" | "secondary" | "outlined"
     onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void | Promise<void>,
     style?: string
+    actionType: "button" | "submit"
 
 }
 

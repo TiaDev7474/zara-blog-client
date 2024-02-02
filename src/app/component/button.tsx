@@ -4,10 +4,11 @@ import React from "react";
 import Link from "next/link";
 import clsx from "clsx";
 
-export default function Button({label, onClick, to, isLink, type, icon, style}: ButtonPropsType){
+export default function Button({label, onClick, to, isLink, type, icon, style, actionType}: ButtonPropsType){
    const isSecondaryCta = type == "secondary"
    const isOutlinedCta = type == "outlined"
    const isPrimaryCta = type == "primary"
+
    return (
       <React.Fragment>
           {
@@ -31,7 +32,7 @@ export default function Button({label, onClick, to, isLink, type, icon, style}: 
               ): (
                   <button
                       onClick={onClick}
-                      type="button"
+                      type={actionType}
                       className={clsx("btn group", style, {
                            "btn-outlined": isOutlinedCta,
                            "btn-secondary": isSecondaryCta,
