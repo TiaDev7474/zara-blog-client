@@ -4,7 +4,7 @@ import Navbar from "@/app/component/navbar";
 
 export default function Home() {
   return (
-    <main className="min-h-screen w-full -z-10  object-fill bg-no-repeat bg-white  bg-pattern dark:bg-background_dark">
+    <main className="min-h-screen w-full -z-10  object-fill bg-no-repeat bg-white  bg-pattern dark:bg-blend-darken">
         <Navbar />
         <section className="z-50 pt-12">
             <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">

@@ -3,7 +3,6 @@ import {AuthCredentialsType , LoginSchemaType , SignUpSchemaType} from "@/app/au
 
 class AuthService {
     private  pathname: String = "/auth"
-
     public authenticate(credentials: LoginSchemaType) {
         console.log(credentials, "at authenticate services")
         return httpClient.post<AuthCredentialsType>(`${this.pathname}/login`, credentials)
