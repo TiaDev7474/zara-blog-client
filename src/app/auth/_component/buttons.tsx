@@ -24,7 +24,7 @@ export const LogoutButton = () => {
 
 export const AuthButton= () => {
     const session = useSession()
-    console.log('session', session.data?.user)
+    console.log('session', session)
     if(!session.data) return <LoginButton />
     return <LogoutButton />
 }

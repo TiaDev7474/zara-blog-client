@@ -1,4 +1,5 @@
 import NextAuth, {DefaultSession , DefaultUser} from "next-auth";
+import {DefaultJWT} from "next-auth/jwt";
 
 
 declare  module "next-auth" {
@@ -10,9 +11,19 @@ declare  module "next-auth" {
             id: string
         } & DefaultSession['user']
     }
+    interface User extends  DefaultUser{
+        firstname?: string;
+        lastname?: string;
+        access_token: string
+    }
 }
 
-interface User {}
+declare module "next-auth/jwt"{
+    interface JWT extends  DefaultJWT{
+        access_token: string;
+    }
+}
+
 /**
  * Usually contains information about the provider being used
  * and also extends `TokenSet`, which is different tokens returned by OAuth Providers.
